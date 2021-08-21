@@ -104,6 +104,21 @@ function calculateTotal(){
 
     const inputTotal = document.getElementById('total');
     inputTotal.innerText = totalPrice;
-
+    
 }
 
+// Extra Promo Code===
+document.getElementById('apply-button').addEventListener('click', function(){
+    
+    const promoInput = document.getElementById('promo-code');
+    const promoCode = promoInput.value;
+    const inputTotal = document.getElementById('total');
+        let total = inputTotal.innerText;
+    if(promoCode == 'stevekaku'){
+        inputTotal.innerText = total - (20 / 100) * total;
+
+        promoInput.value ='';
+        
+    }
+    return total;
+});
